@@ -20,3 +20,72 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+
+/* 2. Shared */
+
+.wallpaper {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* 3. Specific */
+
+.wallpaper {
+  background-image: url('../images/austria.jpg');
+  background-position: center;
+  background-size: cover;
+  opacity: 0.2;
+  position: fixed;
+}
+
+.content {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+}
+
+.side {
+  max-height: 20rem;
+  max-width: 20rem;
+}
+
+.about {
+  max-width: 26rem;
+}
+
+@media screen and (max-width: 799px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 3rem;
+  }
+  .side {
+    margin-bottom: 3rem;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .content {
+    align-items: center;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    padding: 4rem;
+  }
+  .side {
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 20rem;
+    margin-left: 4rem;
+    order: 2;
+    width: 20rem;
+  }
+  .about {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}
